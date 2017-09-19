@@ -12,7 +12,7 @@ def get_music_info(url):
     return parse_music_info(response.text)
 
 def parse_music_info(html):
-    pattern = re.compile('{"SongName":.*?"Grp":.*?[]|}],"AlbumPrivilege":.*?}')
+    pattern = re.compile('{"SongName":.*?}.*?}')
     result = re.findall(pattern, html)
     for item in result:
         item = json.loads(item )
