@@ -38,6 +38,5 @@ def main(keyword):
         second = str(second) if second > 10 else '0'+str(second)
         print '歌名：'+str(item[0]),'专辑：'+ str(item[2]),'时长：'+str(int(item[3])/60)+':'+second,play_url
 
-
 if __name__ == '__main__':
     main('梦然')
