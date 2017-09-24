@@ -54,10 +54,10 @@ def get_json(url,params,encSecKey):
 
 if __name__ == "__main__":
     serch_url = 'http://music.163.com/weapi/cloudsearch/get/web?csrf_token='
-	url = 'http://music.163.com/weapi/song/enhance/player/url?csrf_token='
+    url = 'http://music.163.com/weapi/song/enhance/player/url?csrf_token='
     params = get_music_list('王菲')
     encSecKey = get_encSecKey()
-    json_text = get_json(serch_urlurl, params, encSecKey)
+    json_text = get_json(serch_url, params, encSecKey)
     json_dict = json.loads(json_text)
     for item in json_dict['result']['songs']:
         p = get_music_url(item['id'])
