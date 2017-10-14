@@ -18,7 +18,7 @@ def parse_music_info(html):
     try:
         result = json.loads(html)
         for item in result['data']['lists']:
-            yield [item['FileName'], item['AlbumID'], item['AlbumName'], item['Duration'], item['FileHash']]
+            yield [item['FileName'], item['AlbumID'], item['AlbumName'], item['Duration'], item['HQFileHash']]
     except Exception:
         yield None
 
