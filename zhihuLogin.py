@@ -50,10 +50,10 @@ headers = {
 }
 postdata = {
 	'_xsrf': _xsrf,
-	'password': 'Qq172655790',
+	'password': '******',
     'captcha': '{"img_size":[200,44],"input_points":['+l+']}',
 	'captcha_type': 'cn',
-	'phone_num': '15515545520'
+	'phone_num': '******'
 }
 data = urllib.urlencode(postdata)
 request = urllib2.Request(post_url, data, headers)
