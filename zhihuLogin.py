@@ -26,19 +26,16 @@ def saveImg():
     img.show()
 
 #获取验证码中倒立文字的位置
-def getPoint(n):
-    switch = {'1':'20.375,22','2':'45.375,23','3':'70.375,21','4':'95.375,20','5':'120.375,18','6':'145.375,22','7':'170.375,22'}
-    return switch[n]
+def getPoints(n):
+    switch = {'1':[20.375,22],'2':[45.375,23],'3':[70.375,21],'4':[95.375,20],'5':[120.375,18],'6':[145.375,29],'7':[170.375,17]}
+    ls = []
+    for i in list(n):
+        ls.append(switch[i])
+    return ls
 
 saveImg()
-num = raw_input('请输入验证码的个数：')
-if int(num)==1:
-    first = raw_input('请输入第一个验证码的位置：')
-    l = '['+getPoint(first)+']'
-else:
-    first = raw_input('请输入第一个倒立文字的位置：')
-    second = raw_input('请输入第二个倒立文字的位置：')
-    l = '['+getPoint(first)+'],['+getPoint(second)+']'
+num = raw_input('请输入验证码：')
+ls_points = str(getPoints(num))
 #获取_xsrf
 for item in cookie:
     if item.name == '_xsrf':
@@ -51,7 +48,7 @@ headers = {
 postdata = {
 	'_xsrf': _xsrf,
 	'password': '******',
-    'captcha': '{"img_size":[200,44],"input_points":['+l+']}',
+    'captcha': '{"img_size":[200,44],"input_points":'+ls_points+'}',
 	'captcha_type': 'cn',
 	'phone_num': '******'
 }
