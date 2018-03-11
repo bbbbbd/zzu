@@ -23,8 +23,8 @@ def post_save(url):
 
 url = 'http://jw.zzu.edu.cn/scripts/jpxx/jpxxcgi.exe/check'
 data = {
-    'zhanghao':'201577f0132',
-    'mima':'172655790',
+    'zhanghao':'*******',
+    'mima':'********',
     'shenfen':'stu'
 }
 response = requests.post(url, data=data)
